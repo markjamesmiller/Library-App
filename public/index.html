@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Personal Library App</title>
+    <link rel='stylesheet' href="CSS/style.css">
+  </head>
+  <body>
+    <h1>Library App</h1>
+    <form id='library'>
+            Title:<br>
+            <input type="hidden" id="book-id"/>
+            <input id='book-title' type="text" name="title"><br>
+            Author:<br>
+            <input id='book-author' type="text" name="author"><br>
+        <div class="button">
+              <button id='submit' onclick="submitBookForm()">Submit</button>
+              <button id='showBooks'>Show All Books</button>
+              <!--still need to make a showAll-->
+            </div>
+            <div id="list-container"></div>
+</form>
+<ul id="dynamic-list"></ul>
+
+<!--<input type="text" id="candidate"/>-->
+<!--<button onclick="addItem()">add item</button>-->
+<!--<button onclick="removeItem()">remove item</button>-->
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type='text/javascript' src="/app.js"></script>
+<script>
+$(document).ready(()=> {
+  refreshBookList()
+  $('#showBooks').on('click', refreshBookList)
+  // $('#submit').on('click', submitBookForm) 
+})
+</script>
+  </body>
+</html>
+
+
+<!--submit button-->
+<!--border-->
+
+<!--http://blog.teamtreehouse.com/create-ajax-contact-form-->
