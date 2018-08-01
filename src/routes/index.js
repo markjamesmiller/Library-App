@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var book = require('../models/books.js');
 
+//get routes
 router.get('/books', function(req, res) {
   book.find({}, function (err, books) {
     if (err) {
@@ -27,6 +28,7 @@ router.get('/books/:bookId', function (req, res, next) {
   });
 });
 
+//post routes
 router.post('/books', function (req, res, next) {
   const bookData = {
     author: req.body.authorID,
@@ -43,6 +45,7 @@ router.post('/books', function (req, res, next) {
   });
 });
 
+//update routes
 router.put('/books/:bookId', function(req, res, next) {
     const bookId = req.params.bookId;
 
@@ -69,6 +72,7 @@ router.put('/books/:bookId', function(req, res, next) {
     });
 });
 
+//delete routes
 router.delete('/books/:bookId', function (req, res, next) {
   const { bookId } = req.params;
   book.findById(bookId, function(err, book) {

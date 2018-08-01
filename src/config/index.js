@@ -10,3 +10,5 @@ module.exports = {
     dbName:   process.env.DB_NAME,
   }
 };
+
+//for my IDE I have to use process.env.PORT but you will need to put in your own local port

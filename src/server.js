@@ -1,3 +1,4 @@
+//dependencies
 const router = require('./routes');
 const express = require('express');
 const config = require('./config');
@@ -17,6 +18,7 @@ app.listen(process.env.PORT, function() {
   console.log('Personal Library App server is listening on PORT' + process.env.PORT);
 });
 
+//connecting to mongodb
 var mongoose = require("mongoose");
 const connectionString = `mongodb://${config.db.username}:${config.db.password}@${config.db.host}/${config.db.dbName}`;
 mongoose.connection.openUri(connectionString);

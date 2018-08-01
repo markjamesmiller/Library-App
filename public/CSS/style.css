@@ -2,3 +2,9 @@
     padding: 10px 0px 10px 0px;
     border-bottom: 2px solid;
 }
+
+@media (min-width: 720px) {
+    .header1 {
+        display: flex;
+        justify-content: flex-end;
+    }
